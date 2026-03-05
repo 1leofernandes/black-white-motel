@@ -5,9 +5,6 @@ export function Footer() {
         <p className="text-gray-400 text-sm">
           © {new Date().getFullYear()} PRETO & BRANCO MOTEL. Todos os direitos reservados.
         </p>
-        <p className="text-gray-500 text-xs mt-2">
-          Desenvolvido como parte de processo seletivo.
-        </p>
       </div>
     </footer>
   )
