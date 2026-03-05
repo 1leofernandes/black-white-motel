@@ -1,7 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Flag, Clock } from 'lucide-react'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
+import { Flag, Clock, Gift } from 'lucide-react'
 import Image from 'next/image'
 
 const getMotoGPDay = () => {
@@ -15,6 +17,9 @@ export function Promocoes() {
     minutos: 0,
     segundos: 0,
   })
+
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   useEffect(() => {
     const target = getMotoGPDay()
@@ -41,72 +46,84 @@ export function Promocoes() {
   }, [])
 
   return (
-    <section id="promocoes" className="relative py-20 bg-gray-100">
+    <section id="promocoes" className="relative py-32 bg-gray-900 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
           src="/headermotogp.jpg"
-          alt="Fachada do motel"
-          fill
-          className="object-cover brightness-50"
-          priority
+          alt="Hero"
+          layout="fill"
+          objectFit="cover"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
       </div>
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-thin text-6xl font-bold text-center text-gray-200 mb-12">
-          MotoGP Goiânia
-        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-accent">
-            <div className="flex items-center gap-3 text-accent mb-4">
-              <Clock size={32} />
+      <div ref={ref} className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="font-serif text-5xl md:text-6xl font-bold text-center text-white mb-16"
+        >
+          <span className="text-accent">MotoGP</span> Goiânia
+        </motion.h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8 text-white"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <Clock className="text-accent" size={32} />
               <h3 className="text-2xl font-bold">Contagem Regressiva</h3>
             </div>
-            <p className="text-gray-700 mb-6">
-              Faltam apenas <span className="font-bold text-accent">{timeLeft.dias} dias</span> para o grande evento MotoGP! 
+            <p className="text-gray-300 mb-8 text-lg">
+              Faltam apenas <span className="text-accent font-bold">{timeLeft.dias} dias</span> para o grande evento MotoGP! 
               Confira nossas promoções especiais e garanta sua reserva.
             </p>
-            <div className="grid grid-cols-4 gap-2 text-center">
-              <div className="bg-gray-900 text-white p-3 rounded">
-                <span className="text-3xl font-bold">{timeLeft.dias}</span>
-                <span className="block text-xs">dias</span>
-              </div>
-              <div className="bg-gray-900 text-white p-3 rounded">
-                <span className="text-3xl font-bold">{timeLeft.horas}</span>
-                <span className="block text-xs">horas</span>
-              </div>
-              <div className="bg-gray-900 text-white p-3 rounded">
-                <span className="text-3xl font-bold">{timeLeft.minutos}</span>
-                <span className="block text-xs">min</span>
-              </div>
-              <div className="bg-gray-900 text-white p-3 rounded">
-                <span className="text-3xl font-bold">{timeLeft.segundos}</span>
-                <span className="block text-xs">seg</span>
-              </div>
+            <div className="grid grid-cols-4 gap-4">
+              {Object.entries(timeLeft).map(([key, value]) => (
+                <div key={key} className="text-center">
+                  <div className="bg-gradient-to-b from-accent to-red-700 rounded-xl p-4 shadow-2xl">
+                    <span className="text-4xl font-bold">{value}</span>
+                  </div>
+                  <span className="block mt-2 text-sm uppercase tracking-wider text-gray-400">{key}</span>
+                </div>
+              ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-accent">
-            <div className="flex items-center gap-3 text-accent mb-4">
-              <Flag size={32} />
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8 text-white"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <Flag className="text-accent" size={32} />
               <h3 className="text-2xl font-bold">Abertura Exclusiva</h3>
             </div>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-300 text-lg leading-relaxed mb-8">
               Estaremos abertos exclusivamente para receber todos os participantes da etapa MotoGP Goiânia.
               <br />
-              <span className="block mt-4 font-semibold">📍 Reserve seu horário!</span>
+              <span className="block mt-4 font-semibold text-accent">📍 Reserve seu horário!</span>
             </p>
-            <div className="mt-6">
+            <div className="flex items-center gap-4">
+              <Gift className="text-accent" size={24} />
+              <span className="text-lg">Brindes especiais para quem reservar antecipadamente.</span>
+            </div>
+            <div className="mt-8">
               <a
                 href="https://wa.me/5562993148177"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-accent text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition"
+                className="inline-block bg-accent text-white px-8 py-4 rounded-full font-semibold hover:bg-red-700 transition-all hover:scale-105 hover:shadow-2xl"
               >
                 Garanta sua promoção
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
