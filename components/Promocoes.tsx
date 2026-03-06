@@ -51,8 +51,9 @@ export function Promocoes() {
         <Image
           src="/headermotogp.jpg"
           alt="Hero"
-          layout="fill"
-          objectFit="cover"
+          fill
+          className="object-cover"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70" />
       </div>

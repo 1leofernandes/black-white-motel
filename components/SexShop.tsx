@@ -17,14 +17,17 @@ export function SexShop() {
 
   return (
     <section id="sexshop" className="relative py-32 bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-white rounded-full"
             initial={{
-              x: Math.random() * 100 + '%',
-              y: Math.random() * 100 + '%',
+              x: `${Math.random() * 100}%`,
+              y: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [null, '-20%', '20%'],
             }}
             transition={{
               duration: 5 + Math.random() * 5,
@@ -66,10 +69,9 @@ export function SexShop() {
                 whileHover={{ scale: 1.1}}
                 className="group cursor-pointer"
               >
-                <div className={'relative p-8 bg-gradient-to-br rounded-2xl shadow-2xl overflow-hidden border border-red-500 p-4'}>
+                <div className={'relative p-8 bg-gradient-to-br rounded-2xl shadow-2xl overflow-hidden border border-red-500'}>
                   <Icon size={48} className="mx-auto mb-4 text-white" />
                   <h3 className="text-xl font-bold text-white">{item.name}</h3>
-                  {/* Efeito de brilho */}
                   <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </motion.div>

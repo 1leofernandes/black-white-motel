@@ -32,18 +32,18 @@ export function Hero() {
       </div>
 
       {mounted && (
-        <div className="absolute inset-0 z-10 overflow-hidden">
+        <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-white/30 rounded-full"
               initial={{
-                x: Math.random() * dimensions.width,
-                y: Math.random() * dimensions.height,
+                x: `${Math.random() * 100}%`,
+                y: `${Math.random() * 100}%`,
               }}
               animate={{
-                y: [null, -100, 100],
-                x: [null, 50, -50],
+                y: [null, '-10%', '10%'],
+                x: [null, '5%', '-5%'],
               }}
               transition={{
                 duration: 10 + Math.random() * 10,
@@ -60,7 +60,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="font-thin text-6xl md:text-8xl mb-6 text-shadow"
+          className="font-thin text-5xl sm:text-6xl md:text-8xl mb-6 text-shadow"
         >
           PRETO & BRANCO
         </motion.h1>
