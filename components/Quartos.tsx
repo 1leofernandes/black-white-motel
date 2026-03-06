@@ -46,10 +46,10 @@ export function Quartos() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4">
             Nossos <span className="text-accent">Quartos</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Ambientes sofisticados em preto, branco e toques de vermelho para momentos inesquecíveis. Conheça nossas suítes premium.
           </p>
         </motion.div>

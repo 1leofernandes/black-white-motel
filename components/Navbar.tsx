@@ -42,13 +42,15 @@ export function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <Link href="/" className="relative z-10">
+          <Link href="/" className="relative z-10 flex-shrink-0">
             <Image
               src="/logo.png"
               alt="Preto & Branco Motel"
-              width={180}
+              width={160}
               height={40}
               className="h-auto w-auto"
+              style={{ maxWidth: '130px', height: 'auto' }}
+              priority
             />
           </Link>
 
@@ -74,7 +76,7 @@ export function Navbar() {
               href="https://wa.me/5562993148177"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full bg-accent px-6 py-2 text-sm font-semibold text-white hover:bg-red-700 transition-all hover:scale-105"
+              className="hidden sm:flex items-center gap-2 rounded-full bg-accent px-6 py-2 text-sm font-semibold text-white hover:bg-red-700 transition-all hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -101,12 +103,12 @@ export function Navbar() {
             transition={{ duration: 0.3 }}
             className="md:hidden overflow-hidden bg-black/90 backdrop-blur-lg"
           >
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-6 space-y-3 max-h-[calc(100vh-100px)] overflow-y-auto">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block py-2 text-lg font-medium text-gray-300 hover:text-white transition"
+                  className="block py-2 text-base font-medium text-gray-300 hover:text-white transition"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
@@ -116,9 +118,9 @@ export function Navbar() {
                 href="https://wa.me/5562993148177"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 py-2 text-lg font-medium text-accent"
+                className="flex items-center gap-2 py-2 text-base font-medium text-accent"
               >
-                <Phone size={20} />
+                <Phone size={18} />
                 WhatsApp
               </a>
             </div>

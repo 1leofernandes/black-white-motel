@@ -90,11 +90,11 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8, duration: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full px-4"
         >
           <Link
             href="#quartos"
-            className="group relative px-8 py-4 rounded-full bg-white text-black font-semibold text-lg overflow-hidden transition-all hover:shadow-2xl hover:scale-105"
+            className="group relative px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-black font-semibold text-sm sm:text-lg overflow-hidden transition-all hover:shadow-2xl hover:scale-105 text-center"
           >
             <span className="relative z-10">Conheça nossos quartos</span>
             <motion.div
@@ -109,7 +109,7 @@ export function Hero() {
             href="https://wa.me/5562993148177"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 rounded-full bg-accent text-white font-semibold text-lg hover:bg-red-700 transition-all hover:shadow-2xl hover:scale-105"
+            className="px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-accent text-white font-semibold text-sm sm:text-lg hover:bg-red-700 transition-all hover:shadow-2xl hover:scale-105 text-center"
           >
             Reserve agora
           </a>

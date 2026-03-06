@@ -43,7 +43,7 @@ export function SexShop() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="font-serif text-5xl md:text-6xl font-bold mb-4"
+          className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold mb-4"
         >
           Sex <span className="text-accent">Shop</span>
         </motion.h2>
@@ -52,12 +52,12 @@ export function SexShop() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-xl text-gray-300 mb-16 max-w-2xl mx-auto"
+          className="text-base sm:text-xl text-gray-300 mb-12 sm:mb-16 max-w-2xl mx-auto px-4"
         >
           Produtos de alta qualidade para apimentar sua relação. Disponível 24h em nossa recepção.
         </motion.p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 px-4 sm:px-0 w-full">
           {products.map((item, idx) => {
             const Icon = item.icon
             return (
@@ -69,9 +69,9 @@ export function SexShop() {
                 whileHover={{ scale: 1.1}}
                 className="group cursor-pointer"
               >
-                <div className={'relative p-8 bg-gradient-to-br rounded-2xl shadow-2xl overflow-hidden border border-red-500'}>
-                  <Icon size={48} className="mx-auto mb-4 text-white" />
-                  <h3 className="text-xl font-bold text-white">{item.name}</h3>
+                <div className={'relative p-4 sm:p-8 bg-gradient-to-br rounded-2xl shadow-2xl overflow-hidden border border-red-500'}>
+                  <Icon size={32} className="sm:size-48 mx-auto mb-2 sm:mb-4 text-white" />
+                  <h3 className="text-sm sm:text-xl font-bold text-white text-center">{item.name}</h3>
                   <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </motion.div>
@@ -83,13 +83,13 @@ export function SexShop() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-16"
+          className="mt-12 sm:mt-16"
         >
           <a
             href="https://wa.me/5562993148177"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-10 py-4 text-lg font-semibold hover:bg-red-700 transition-all hover:scale-105 hover:shadow-2xl"
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 sm:px-10 py-3 sm:py-4 text-sm sm:text-lg font-semibold hover:bg-red-700 transition-all hover:scale-105 hover:shadow-2xl"
           >
             Consulte disponibilidade
           </a>

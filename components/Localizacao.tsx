@@ -15,12 +15,12 @@ export function Localizacao() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="font-serif text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4">
             Onde <span className="text-accent">Estamos</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
             Localização privilegiada, fácil acesso para quem chega de viagem.
           </p>
         </motion.div>
@@ -54,42 +54,42 @@ export function Localizacao() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="space-y-8"
           >
-            <div className="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg">
-              <MapPin className="text-accent flex-shrink-0" size={32} />
+            <div className="flex items-start gap-4 p-4 sm:p-6 bg-white rounded-2xl shadow-lg">
+              <MapPin className="text-accent flex-shrink-0" size={28} />
               <div>
-                <h3 className="text-2xl font-bold mb-2">Endereço</h3>
-                <p className="text-gray-700 text-lg">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">Endereço</h3>
+                <p className="text-gray-700 text-sm sm:text-lg">
                   Av. dos Alpes, Quadra 45 lote 04 numero 2216 - Jardim Europa<br />
                   Goiânia - GO, 74325-010
                 </p>
               </div>
             </div>
 
-            <div className="p-6 bg-white rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold mb-3">Referência</h3>
-              <p className="text-gray-700 text-lg">
+            <div className="p-4 sm:p-6 bg-white rounded-2xl shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3">Referência</h3>
+              <p className="text-gray-700 text-sm sm:text-lg">
                 Próximo aos bares do Jardim Atlântico e Vila União. Fácil acesso para viajantes.
               </p>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
               <a
                 href="https://share.google/1rXuejZDHk8tmfYxM"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-accent text-white px-6 py-4 rounded-xl font-semibold hover:bg-red-700 transition-all hover:scale-105"
+                className="flex-1 flex items-center justify-center gap-2 bg-accent text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold hover:bg-red-700 transition-all hover:scale-105 text-sm sm:text-base"
               >
-                <ExternalLink size={20} />
-                Google Meu Negócio
+                <ExternalLink size={18} />
+                <span>Google Meu Negócio</span>
               </a>
               <a
                 href="https://maps.google.com/?q=Preto+Branco+Motel+Goiania"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-gray-900 text-white px-6 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-all hover:scale-105"
+                className="flex-1 flex items-center justify-center gap-2 bg-gray-900 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold hover:bg-gray-800 transition-all hover:scale-105 text-sm sm:text-base"
               >
-                <Navigation size={20} />
-                Traçar rota
+                <Navigation size={18} />
+                <span>Traçar rota</span>
               </a>
             </div>
           </motion.div>

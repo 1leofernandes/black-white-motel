@@ -20,10 +20,10 @@ export function Historia() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-serif text-5xl md:text-6xl font-bold text-gray-900 mb-8">
+            <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 sm:mb-8">
               Nossa <span className="text-accent">História</span>
             </h2>
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+            <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
               <p>
                 No final dos anos 80, um jovem empreendedor chamado <strong>Dino</strong>, já atuante no ramo de vidros, enxergou uma oportunidade única: levar entretenimento e conforto para a região Sudoeste de Goiânia. Na época, os motéis se concentravam apenas na BR-153 e na saída para Trindade.
               </p>
@@ -35,20 +35,20 @@ export function Historia() {
               </p>
             </div>
 
-            <div className="mt-12 flex items-center gap-8">
+            <div className="mt-12 flex flex-wrap items-center gap-4 sm:gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-accent">1989</div>
-                <div className="text-sm text-gray-600">Fundação</div>
+                <div className="text-3xl sm:text-4xl font-bold text-accent">1989</div>
+                <div className="text-xs sm:text-sm text-gray-600">Fundação</div>
               </div>
-              <div className="w-px h-12 bg-gray-300" />
+              <div className="w-px h-8 sm:h-12 bg-gray-300 hidden sm:block" />
               <div className="text-center">
-                <div className="text-4xl font-bold text-accent">1995</div>
-                <div className="text-sm text-gray-600">Ápice</div>
+                <div className="text-3xl sm:text-4xl font-bold text-accent">1995</div>
+                <div className="text-xs sm:text-sm text-gray-600">Ápice</div>
               </div>
-              <div className="w-px h-12 bg-gray-300" />
+              <div className="w-px h-8 sm:h-12 bg-gray-300 hidden sm:block" />
               <div className="text-center">
-                <div className="text-4xl font-bold text-accent">2025</div>
-                <div className="text-sm text-gray-600">Renovação</div>
+                <div className="text-3xl sm:text-4xl font-bold text-accent">2025</div>
+                <div className="text-xs sm:text-sm text-gray-600">Renovação</div>
               </div>
             </div>
           </motion.div>

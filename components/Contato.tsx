@@ -19,7 +19,7 @@ export function Contato() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="font-serif text-5xl md:text-6xl font-bold mb-4"
+          className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold mb-4"
         >
           Fale <span className="text-accent">Conosco</span>
         </motion.h2>
@@ -28,12 +28,12 @@ export function Contato() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-xl text-gray-300 mb-16"
+          className="text-base sm:text-xl text-gray-300 mb-12 sm:mb-16"
         >
           Atendimento rápido e discreto via WhatsApp.
         </motion.p>
 
-        <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center px-4 sm:px-0">
           <motion.a
             href="https://wa.me/5562993148177"
             target="_blank"
@@ -42,10 +42,10 @@ export function Contato() {
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ scale: 1.1 }}
-            className="group relative flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-full text-xl font-semibold transition-all shadow-2xl"
+            className="group relative flex items-center gap-2 sm:gap-3 bg-green-600 hover:bg-green-700 text-white px-5 sm:px-10 py-3 sm:py-5 rounded-full text-sm sm:text-xl font-semibold transition-all shadow-2xl w-full sm:w-auto justify-center"
           >
-            <FaWhatsapp size={28} />
-            (62) 99314-8177
+            <FaWhatsapp size={20} className="flex-shrink-0" />
+            <span>(62) 99314-8177</span>
           </motion.a>
 
           <motion.a
@@ -54,10 +54,10 @@ export function Contato() {
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.3 }}
             whileHover={{ scale: 1.1 }}
-            className="flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-full text-xl font-semibold transition-all shadow-2xl"
+            className="flex items-center gap-2 sm:gap-3 bg-blue-600 hover:bg-blue-700 text-white px-5 sm:px-10 py-3 sm:py-5 rounded-full text-sm sm:text-xl font-semibold transition-all shadow-2xl w-full sm:w-auto justify-center"
           >
-            <Mail size={28} />
-            Enviar Email
+            <Mail size={20} className="flex-shrink-0" />
+            <span>Enviar Email</span>
           </motion.a>
         </div>
       </div>
